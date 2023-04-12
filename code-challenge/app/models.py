@@ -50,6 +50,7 @@ class Appearance( db.Model, SerializerMixin ):
     def validates_rating(self, key, rating):
         if not 1 <= rating <= 5:
             raise ValueError("Rating must be between 1 and 5.")
+        return rating
 
     def __repr__(self):
         return f'<ID: {self.id}, Rating: {self.rating}>'
